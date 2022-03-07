@@ -29,8 +29,6 @@ type ArithResponse struct {
 // 乘法运算方法
 func (arith *Arith) Multiply(req ArithRequest, res *ArithResponse) error {
 	res.Pro = req.A * req.B
-	res.Quo = req.A / req.B
-	res.Rem = req.A / req.B
 	return nil
 }
 

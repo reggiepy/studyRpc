@@ -1,0 +1,24 @@
+syntax = "proto3";// 语法声明
+
+option go_package = "./;pb";
+
+package arith; // 包名
+
+// 请求数据结构
+message ArithRequest {
+  int32 A = 1;
+  int32 B = 2;
+}
+
+// 响应数据结构
+message ArithReply {
+  int32 Pro = 1;
+  int32 Quo = 2;
+  int32 Rem = 3;
+}
+
+// 微服务
+service Arith {
+  rpc Multiply (ArithRequest) returns (ArithReply){};
+  rpc Divide (ArithRequest) returns (ArithReply){};
+}
